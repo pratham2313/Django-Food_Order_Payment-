@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Insert Bootstrap -->
+
+  <head>
+    <style>
+      .shadow-sm {
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+      }
+  
+      .cards {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 2.9px solid rgb(0, 0, 0);
+        border-radius: 1.25rem;
+      }
+  
+      .card-body {
+        flex: 1 1 auto;
+        padding: 1rem 1rem;
+      }
+  
+      .gradient-custom {
+        /* fallback for old browsers */
+        background: #6a11cb;
+  
+  
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Title block -->
+    <title> Punjabi | Alag hai !!!</title>  <!-- Make changes from test.html -->
+    
+  </head>
+  <body class="fa-hand-o-down gradient-custom">
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarExample01"
+            aria-controls="navbarExample01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/atcart">Cart</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    
+      <!-- Background image -->
+      <div
+        class="p-4 text-center bg-image"
+        
+      >
+        
+      <!-- Background image -->
+    </header> 
+<div class=" my-4">
+    <div class="container">
+  
+      <h1 class="text-center my-4" style="color: #fff;"> ._☬ 𝐒𝐄𝐋𝐄𝐂𝐓 𝐏𝐀𝐍𝐉𝐀𝐁𝐈 𝐃𝐈𝐒𝐇𝐄𝐒 ☬_. </h1>
+  
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for n in allpan %}
+        <div class="col">
+          <div class="cards shadow-sm">
+            {% if n.pimage %}
+                <img src="{{n.pimage.url}}" width="100%" height="235px" style="border-radius: 20px;">
+            {% endif %}
+            
+            <div class="card-body">
+              <h4><i><b>{{n.pname}}</b></i></h4>
+              <h5>₹ {{n.pprize}}</h5>
+              <form action="/addtocartpan" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                 <input hidden type="text" name="atcid" value="{{n.pid}}">
+                 <input hidden type="text" name="atcname" value="{{n.pname}}">
+                 <input hidden type="text" name="atcprize" value="{{n.pprize}}">
+                 <input hidden type="text" name="atcimage" value="{{n.pimage}}">
+                 <input hidden type="text" name="userid" value="{{user.id}}">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-primary"  >Add To Cart</button>
+                </div>
+              </form>
+              
+              
+            </div>
+             
+             
+            </div>  
+          </div>
+        </div>
+        
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+</body>        <!-- This goes to base.html and make changes in body block --> 

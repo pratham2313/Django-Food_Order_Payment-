@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact {% endblock title %}   <!-- This goes to base.html and make changes in title block -->
+
+{% block body %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<h2 class="text-center my-3"> CONTACT US </h2>
+
+<!-- Form -->
+<div class="container px-5 my-5">
+ <form method="post" action="/contact">
+ {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="name" class="form-control" name="name" placeholder="Enter your name">
+      </div>
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter your email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Phone No.</label>
+        <input type="phone" class="form-control" name="phone" placeholder="Enter your phone number">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1" class="mb-2">Why you want to contact us ?</label>
+      <textarea class="form-control" name="desc" placeholder="Enter your reasons...." id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="my-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/home"><button style="margin-left: 10px;" type="button" class="btn btn-primary">Home</button></a>
+    </div>
+  </form>
+  
+</div>
+
+{% endblock body %}        <!-- This goes to base.html and make changes in body block --> 

@@ -1,0 +1,384 @@
+{% extends 'base.html' %}
+
+{% block title %}| Home {% endblock title %}   <!-- This goes to base.html and make changes in title block // like 2nd title -->
+
+{% block body %}
+
+<!-- This is text from test.html through block -->
+
+<!-- Image slider -->
+<div class="hero_area">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/loginuser">Login</a>
+          </li>
+          <li class="nav-item">
+            <a onclick="openNav()" class="nav-link active" aria-current="page" href="#">Menu</a>
+          </li>
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Category
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/punjabi">Panjabi Dishes</a></li>
+              <li><a class="dropdown-item" href="/south">South Dishes</a></li>
+              <li><a class="dropdown-item" href="/italian">Italian Dishes</a></li>
+              {% comment %} <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li> {% endcomment %}
+            </ul>
+          </li>
+          
+          
+        </ul>
+        <form class="d-flex">
+          <li class="nav-item">
+            <a href="/atcart"><span><i class="fa fa-shopping-cart" style="font-size: 30px;color: rgb(255, 255, 255);margin-right: 10px;" aria-hidden="true" ></i></span></a>
+            <a href="/logoutuser"><span><i class="fa fa-user" style="font-size: 20px;color: rgb(255, 255, 255);margin-left: 10px;" aria-hidden="true" > logout</span></i></a>
+            
+          </li>
+          
+        </form>
+      </div>
+    </div>
+  </nav>
+  <a class="navbar-brand" href="base.html">
+    <span style="font-size: 26px;">
+      Welcome <b><i>{{username}}</i></b> To Darshan Restaurant  
+    </span>
+  </a>
+  
+  
+  <div id="myNav" class="overlay">
+    <div class="overlay-content">
+      <a href="base.html">Home</a>
+      
+      <a href="/contact">Contact</a>
+      <a href="/about">About</a>
+    </div>
+  </div>
+  
+  <!-- header section strats -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        
+        <div>
+          
+          <span style="font-size: 40px;color: rgb(255, 255, 255);"><i class="fa fa-cutlery" style="font-size: 40px; color: rgb(236, 253, 0);border-color: aliceblue;border: 3px;" ></i>Darshan Restaurant</span>
+          
+        </div>
+        
+        <a class="navbar-brand">
+          <span style=" font-size:26px;">
+            Welcome <b style="color: rgb(236, 253, 0);">{{username}} </b><span style="font-size:40px;">&#128526;</span> 
+          </span>
+        </a>
+
+        <!-- <div class="" id="">
+          <div class="User_option">
+            
+            <form class="form-inline ">
+              <a href="">
+                <center><i class="fa fa-user" style="font-size: 20px;" aria-hidden="true" ></i></center>
+                <span>Login</span>
+              </a>
+              <div style="margin-left: 1500px;margin-bottom: 15px;">
+                <a href="/atcart">
+                
+                  <i class="fa fa-shopping-cart" style="font-size:32px;"></i>
+                  
+                </a>
+              </div>
+              
+              
+              
+            </form>
+          </div>
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <img src="/static/images/menu.png" style="bottom: 20px;" alt="">
+            </button>
+          </div>
+          <div id="myNav" class="overlay">
+            <div class="overlay-content">
+              <a href="base.html">Home</a>
+              <a href="/addsouth">ADD SOUTHINDIAN ITEM</a>
+              <a href="/addpanjabi">ADD PANJABI ITEM</a>
+              <a href="/additalian">ADD ITALIAN ITEM</a>
+              <a href="/contact">Contact</a>
+              <a href="/additem">About</a>
+            </div>
+          </div>
+        </div> -->
+        
+          <div id="myNav" class="overlay">
+            <div class="overlay-content">
+              <a href="/home">Home</a>
+              <a href="/addsouth">ADD SOUTHINDIAN ITEM</a>
+              <a href="/addpanjabi">ADD PANJABI ITEM</a>
+              <a href="/additalian">ADD ITALIAN ITEM</a>
+              <a href="/contact">Contact</a>
+              <a href="/about">About</a>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+
+  <!-- slider section -->
+  <section class="slider_section ">
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="detail-box">
+            <h1 style="color: aliceblue;">
+              Discover Food In Menu Option
+            </h1>
+            <p>
+              
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="slider_container">
+      <div class="hero-header">
+        <div class="item">
+          <div class="img-box">
+            <img src="/static/images/slider-img1.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-header">
+        <div class="item">
+          <div class="img-box">
+            <img src="/static/images/slider-img3.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-header">
+        <div class="item">
+          <div class="img-box">
+            <img src="/static/images/slider-img4.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-header">
+        <div class="item">
+          <div class="img-box">
+            <img src="/static/images/slider-img1.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-header">
+        <div class="item">
+          <div class="img-box">
+            <img src="/static/images/slider-img2.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-header">
+        <div class="item">
+          <div class="img-box">
+            <img src="/static/images/slider-img3.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-header">
+        <div class="item">
+          <div class="img-box">
+            <img src="/static/images/slider-img4.png" alt="" />
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <!-- end slider section -->
+</div>
+
+
+<!-- recipe section -->
+
+<section class="recipe_section layout_padding-top">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Our Food Category
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4 mx-auto">
+        <div class="box">
+          <div class="img-box">
+            <img width="368px" height="492px" src="/static/images/punjabi-food-1200x900-1.jpg" class="box-img" alt="">
+          </div>
+          <div class="detail-box">
+            <h4>
+              Panjabi
+            </h4>
+            <a href="/punjabi">
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 mx-auto">
+        <div class="box">
+          <div class="img-box">
+            <img width="368px" height="492px" src="/static/images/eazytrendz_3091_trend20210322132626.jpg" class="box-img" alt="">
+          </div>
+          <div class="detail-box">
+            <h4>
+              South Indian
+            </h4>
+            <a href="/south">
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 mx-auto">
+        <div class="box">
+          <div class="img-box">
+            <img src="/static/images/r2.jpg" class="box-img" alt="">
+          </div>
+          <div class="detail-box">
+            <h4>
+              Italian
+            </h4>
+            <a href="/italian">
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-xxl py-5 hero-header mb-4">
+        <div class="container my-5 py-5">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 text-center text-lg-end overflow-hidden" style="margin-left: 800px; margin-top:200;">
+              <img src="/static/images/spinner.png"
+                 alt="">
+            </div>
+            <div class="col-lg-6 text-center text-lg-start">
+              <div class="relative">
+                <h1 class="display-3 text-black animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
+                <p class="text-black animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <a href="/about" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">About</a>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    <div class="btn-box">
+      <a href="/atcart">
+        Go To Cart
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- end recipe section -->
+
+<!-- app section -->
+
+
+<!-- end client section -->
+
+<div class="footer_container">
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="contact_box">
+        <a href="https://www.google.com/maps/place/Premvati+Uphaar+Gruh/@22.6865569,72.8730097,17z/data=!3m1!4b1!4m5!3m4!1s0x395e5b21fd7ba9a9:0x3b37563567d067c!8m2!3d22.6865629!4d72.875227">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+        </a>
+        <a href="tel:9879880033">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="info_links">
+        <ul>
+          <li class="active">
+            <a href="base.html">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+          <li>
+            <a class="" href="blog.html">
+              contact
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="social_box">
+        <a href="">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/pratham__2313/">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span>
+        <a href="https://html.design/"></a><br>
+        <a href="https://themewagon.com/"></a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+</div>
+<!-- jQery -->
+<script src="/static/js/jquery-3.4.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="/static/js/bootstrap.js"></script>
+<!-- slick  slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+<!-- nice select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+<!-- custom js -->
+<script src="/static/js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+{% endblock body %}        <!-- This goes to base.html and make changes in body block --> 
